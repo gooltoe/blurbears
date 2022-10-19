@@ -9,7 +9,7 @@ function Hero({}: Props) {
   const [count, setCount] = useState(1);
 
   const { isConnected } = useAccount();
-  const { config } = usePrepareContractWrite({
+  const { config }: any = usePrepareContractWrite({
     address: "0xe8e322e5CA0a89dD522C6FedE9665056A286260c",
     args: [count],
     abi: contractInterface,
