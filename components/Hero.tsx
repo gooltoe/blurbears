@@ -149,15 +149,13 @@ function Hero({}: Props) {
                   mint?.();
                 }}
                 className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
-                // disabled={isMintLoading || !saleActive}
-                disabled={true}
+                disabled={isMintLoading || !saleActive}
                 data-mint-loading={isMintLoading}
                 data-mint-started={isMintStarted}
               >
                 {isMintLoading && "Minting..."}
                 {!isMintLoading && "Mint "}
                 {!saleActive && "Not Live"}
-                {"Not Live"}
               </button>
             </div>
           ) : (
