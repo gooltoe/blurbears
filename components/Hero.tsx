@@ -101,17 +101,21 @@ function Hero({}: Props) {
 
           <div className="flex gap-4 py-2 items-center">
             <div className="w-8">
-              <a href="https://twitter.com/BlurBears" target="_blank">
+              <a
+                href="https://twitter.com/BlurBears"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/twitter.png" alt="" />
               </a>
             </div>
             <div className="w-8">
-              <a href="https://etherscan.io/">
+              <a href="https://etherscan.io/" target="_blank" rel="noreferrer">
                 <img src="/etherscan.png" alt="" />
               </a>
             </div>
             <div className="w-16">
-              <a href="https://blur.io/">
+              <a href="https://blur.io/" target="_blank" rel="noreferrer">
                 <img src="/logo.gif" alt="" />
               </a>
             </div>
