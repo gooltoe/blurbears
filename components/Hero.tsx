@@ -89,7 +89,7 @@ function Hero({}: Props) {
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
             Sweep and sell exclusively on the blur.io marketplace to be eligible
-            for the incoming $BLUR airdrops!
+            for the incoming $BLUR airdrops! Can only be listed on blur.io.
           </p>
 
           {isConnected ? (
