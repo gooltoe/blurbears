@@ -29,7 +29,7 @@ function Hero({}: Props) {
     functionName: "mint",
     overrides: {
       from: address,
-      value: ethers.utils.parseEther("0.0069"),
+      value: ethers.utils.parseEther((0.0069 * count).toString()),
     },
   });
 
