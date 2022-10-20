@@ -94,7 +94,7 @@ function Hero({}: Props) {
           <p className="text-lg font-semibold text-[#ff5600]">
             Disclaimer: BLURBEARS cannot be listed on Opensea, LooksRare,
             Sudoswap, or X2Y2. Please use{" "}
-            <a href="blur.io" className="underline">
+            <a href="https://blur.io/" className="underline">
               blur.io
             </a>
             .
