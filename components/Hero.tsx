@@ -78,7 +78,7 @@ function Hero({}: Props) {
   }, [maxSupplyData]);
 
   return (
-    <div className=" bg-[#0a0504] flex flex-col px-[10vw] pb-[10vh]">
+    <div className=" bg-[#0a0504] flex flex-col px-[10vw] py-[10vh]">
       <div className="p-6"></div>
       <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
         <div className="basis-1/2">
@@ -89,9 +89,33 @@ function Hero({}: Props) {
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
             Sweep and sell exclusively on the blur.io marketplace to be eligible
-            for the incoming $BLUR airdrops! BLURBEARS can only be listed on
-            blur.io.
+            for the incoming $BLUR airdrops!
           </p>
+          <p className="text-lg font-semibold text-[#ff5600]">
+            BLURBEARS can only be listed on{" "}
+            <a href="blur.io" className="underline">
+              blur.io
+            </a>
+            .
+          </p>
+
+          <div className="flex gap-4 py-2 items-center">
+            <div className="w-8">
+              <a href="https://twitter.com/BlurBears" target="_blank">
+                <img src="/twitter.png" alt="" />
+              </a>
+            </div>
+            <div className="w-8">
+              <a href="https://etherscan.io/">
+                <img src="/etherscan.png" alt="" />
+              </a>
+            </div>
+            <div className="w-16">
+              <a href="https://blur.io/">
+                <img src="/logo.gif" alt="" />
+              </a>
+            </div>
+          </div>
 
           {isConnected ? (
             <div>
@@ -127,7 +151,38 @@ function Hero({}: Props) {
               </button>
             </div>
           ) : (
-            ""
+            <div>
+              <p className="text-xl font-bold pb-2 text-[#ff5600]">
+                {totalMinted}/3333 minted!
+              </p>
+              <div className="flex gap-4 items-center">
+                <button
+                  onClick={() => setCount(Math.max(count - 1, 1))}
+                  className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
+                >
+                  -
+                </button>
+                <h1 className="text-3xl font-bold text-[#ff5600]">{count}</h1>
+                <button
+                  onClick={() => setCount(Math.min(count + 1, 5))}
+                  className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                onClick={() => {
+                  mint?.();
+                }}
+                className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
+                disabled={isMintLoading}
+                data-mint-loading={isMintLoading}
+                data-mint-started={isMintStarted}
+              >
+                {isMintLoading && "Minting..."}
+                {!isMintLoading && "Mint"}
+              </button>
+            </div>
           )}
 
           {/* <ConnectButton /> */}
