@@ -109,7 +109,11 @@ function Hero({}: Props) {
               </a>
             </div>
             <div className="w-8">
-              <a href="https://etherscan.io/" target="_blank" rel="noreferrer">
+              <a
+                href="https://etherscan.io/address/0x3c319ba34c2602a3107bc6c8f0c123ccc9cd40ed"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/etherscan.png" alt="" />
               </a>
             </div>
