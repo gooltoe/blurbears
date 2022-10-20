@@ -13,12 +13,12 @@ import { CustomButton } from "./CustomButton";
 
 type Props = {};
 
-const contract = "0x480117EC34d3070FAA3DAA862FF3DD2C8881F670";
+const contract = "0xe5a1de87a0f03adc2cb0fb6d84898bd0d01d03e0";
 
 function Hero({}: Props) {
   const [count, setCount] = useState(1);
   const [totalMinted, setTotalMinted] = useState(0);
-  const [maxSupply, setMaxSupply] = useState(0);
+  const [live, setSaleLive] = useState(false);
 
   const { isConnected, address } = useAccount();
 
@@ -51,16 +51,11 @@ function Hero({}: Props) {
     watch: true,
   });
 
-  const { data: maxSupplyData } = useContractRead({
+  const { data: saleActive } = useContractRead({
     address: contract,
     abi: contractInterface,
-    functionName: "maxSupply",
-  });
-
-  const { data: costData } = useContractRead({
-    address: contract,
-    abi: contractInterface,
-    functionName: "cost",
+    functionName: "saleActive",
+    watch: true,
   });
 
   const isMinted = txSuccess;
@@ -68,14 +63,17 @@ function Hero({}: Props) {
   useEffect(() => {
     if (totalSupplyData) {
       setTotalMinted((totalSupplyData as any).toNumber());
+      if ((totalSupplyData as any).toNumber() >= 3333) {
+        setSaleLive(false);
+      }
     }
   }, [totalSupplyData]);
 
   useEffect(() => {
-    if (maxSupplyData) {
-      setMaxSupply((maxSupplyData as any).toNumber());
+    if (saleActive) {
+      setSaleLive(saleActive as any);
     }
-  }, [maxSupplyData]);
+  }, [saleActive]);
 
   return (
     <div className=" bg-[#0a0504] flex flex-col px-[10vw] py-[10vh]">
@@ -116,7 +114,11 @@ function Hero({}: Props) {
               </a>
             </div>
             <div className="w-16">
-              <a href="https://blur.io/" target="_blank" rel="noreferrer">
+              <a
+                href="https://blur.io/collection/blurbears"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/logo.gif" alt="" />
               </a>
             </div>
@@ -147,12 +149,15 @@ function Hero({}: Props) {
                   mint?.();
                 }}
                 className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
-                disabled={isMintLoading}
+                // disabled={isMintLoading || !saleActive}
+                disabled={true}
                 data-mint-loading={isMintLoading}
                 data-mint-started={isMintStarted}
               >
                 {isMintLoading && "Minting..."}
-                {!isMintLoading && "Mint"}
+                {!isMintLoading && "Mint "}
+                {!saleActive && "Not Live"}
+                {"Not Live"}
               </button>
             </div>
           ) : (
