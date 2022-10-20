@@ -89,7 +89,8 @@ function Hero({}: Props) {
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
             Sweep and sell exclusively on the blur.io marketplace to be eligible
-            for the incoming $BLUR airdrops! Can only be listed on blur.io.
+            for the incoming $BLUR airdrops! BLURBEARS can only be listed on
+            blur.io.
           </p>
 
           {isConnected ? (
@@ -138,11 +139,7 @@ function Hero({}: Props) {
           )}
         </div>
         <div className="rounded-xl shadow-xl border-2 border-[#ff5600] p-6 basis-2/5">
-          <img
-            src="/blurbearnobg.png"
-            alt=""
-            className="rounded-xl shadow-xl"
-          />
+          <img src="/blurtest.gif" alt="" className="rounded-xl shadow-xl" />
         </div>
       </div>
     </div>
