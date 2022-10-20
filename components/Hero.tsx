@@ -13,7 +13,7 @@ import { CustomButton } from "./CustomButton";
 
 type Props = {};
 
-const contract = "0xe5a1de87a0f03adc2cb0fb6d84898bd0d01d03e0";
+const contract = "0x3c319ba34c2602a3107bc6c8f0c123ccc9cd40ed";
 
 function Hero({}: Props) {
   const [count, setCount] = useState(1);
@@ -149,8 +149,7 @@ function Hero({}: Props) {
                   mint?.();
                 }}
                 className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
-                // disabled={isMintLoading || !saleActive}
-                disabled={true}
+                disabled={isMintLoading || !saleActive}
                 data-mint-loading={isMintLoading}
                 data-mint-started={isMintStarted}
               >
