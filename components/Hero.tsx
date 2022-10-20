@@ -151,38 +151,39 @@ function Hero({}: Props) {
               </button>
             </div>
           ) : (
-            <div>
-              <p className="text-xl font-bold pb-2 text-[#ff5600]">
-                {totalMinted}/3333 minted!
-              </p>
-              <div className="flex gap-4 items-center">
-                <button
-                  onClick={() => setCount(Math.max(count - 1, 1))}
-                  className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
-                >
-                  -
-                </button>
-                <h1 className="text-3xl font-bold text-[#ff5600]">{count}</h1>
-                <button
-                  onClick={() => setCount(Math.min(count + 1, 5))}
-                  className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
-                >
-                  +
-                </button>
-              </div>
-              <button
-                onClick={() => {
-                  mint?.();
-                }}
-                className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
-                disabled={isMintLoading}
-                data-mint-loading={isMintLoading}
-                data-mint-started={isMintStarted}
-              >
-                {isMintLoading && "Minting..."}
-                {!isMintLoading && "Mint"}
-              </button>
-            </div>
+            // <div>
+            //   <p className="text-xl font-bold pb-2 text-[#ff5600]">
+            //     {totalMinted}/3333 minted!
+            //   </p>
+            //   <div className="flex gap-4 items-center">
+            //     <button
+            //       onClick={() => setCount(Math.max(count - 1, 1))}
+            //       className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
+            //     >
+            //       -
+            //     </button>
+            //     <h1 className="text-3xl font-bold text-[#ff5600]">{count}</h1>
+            //     <button
+            //       onClick={() => setCount(Math.min(count + 1, 5))}
+            //       className="rounded-xl px-4 py-2 font-bold text-xl text-[#0a0504] bg-[#ff5600]"
+            //     >
+            //       +
+            //     </button>
+            //   </div>
+            //   <button
+            //     onClick={() => {
+            //       mint?.();
+            //     }}
+            //     className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
+            //     disabled={isMintLoading}
+            //     data-mint-loading={isMintLoading}
+            //     data-mint-started={isMintStarted}
+            //   >
+            //     {isMintLoading && "Minting..."}
+            //     {!isMintLoading && "Mint"}
+            //   </button>
+            // </div>
+            ""
           )}
 
           {/* <ConnectButton /> */}
