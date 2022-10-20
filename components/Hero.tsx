@@ -84,7 +84,7 @@ function Hero({}: Props) {
         <div className="basis-1/2">
           <img src="/BLURBEARS.png" alt="" className="" />
           <p className="text-lg font-semibold text-[#ff5600]">
-            BLURBEARS: a collection of 3333 BlurBears released on Ethereum @
+            BLURBEARS: a collection of 3333 BLURBEARS released on Ethereum @
             0.0069 ETH per mint. 5 per tx, 10 per wallet.
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
@@ -92,14 +92,15 @@ function Hero({}: Props) {
             for the incoming $BLUR airdrops!
           </p>
           <p className="text-lg font-semibold text-[#ff5600]">
-            BLURBEARS can only be listed on{" "}
+            Disclaimer: BLURBEARS cannot be listed on Opensea, LooksRare,
+            Sudoswap, or X2Y2. Please use{" "}
             <a href="blur.io" className="underline">
               blur.io
             </a>
             .
           </p>
 
-          <div className="flex gap-4 py-2 items-center">
+          <div className="flex gap-4 py-2 pb-4 items-center">
             <div className="w-8">
               <a
                 href="https://twitter.com/BlurBears"
