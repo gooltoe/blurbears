@@ -85,7 +85,7 @@ function Hero({}: Props) {
           <img src="/BLURBEARS.png" alt="" className="" />
           <p className="text-lg font-semibold text-[#ff5600]">
             BLURBEARS: a collection of {maxSupply} BlurBears released on
-            Ethereum @ 0.0069 ETH per mint, 1 free per wallet.
+            Ethereum @ 0.0069 ETH per mint. 5 per tx, 10 per wallet.
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
             Sweep and sell exclusively on the blur.io marketplace to be eligible
