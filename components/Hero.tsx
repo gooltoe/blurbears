@@ -84,8 +84,8 @@ function Hero({}: Props) {
         <div className="basis-1/2">
           <img src="/BLURBEARS.png" alt="" className="" />
           <p className="text-lg font-semibold text-[#ff5600]">
-            BLURBEARS: a collection of {maxSupply} BlurBears released on
-            Ethereum @ 0.0069 ETH per mint. 5 per tx, 10 per wallet.
+            BLURBEARS: a collection of 3333 BlurBears released on Ethereum @
+            0.0069 ETH per mint. 5 per tx, 10 per wallet.
           </p>
           <p className="text-lg font-semibold py-6 text-[#ff5600]">
             Sweep and sell exclusively on the blur.io marketplace to be eligible
@@ -96,7 +96,7 @@ function Hero({}: Props) {
           {isConnected ? (
             <div>
               <p className="text-xl font-bold pb-2 text-[#ff5600]">
-                {totalMinted}/{maxSupply} minted!
+                {totalMinted}/3333 minted!
               </p>
               <div className="flex gap-4 items-center">
                 <button
