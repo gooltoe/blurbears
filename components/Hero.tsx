@@ -67,13 +67,13 @@ function Hero({}: Props) {
 
   useEffect(() => {
     if (totalSupplyData) {
-      setTotalMinted(totalSupplyData.toNumber());
+      setTotalMinted((totalSupplyData as any).toNumber());
     }
   }, [totalSupplyData]);
 
   useEffect(() => {
     if (maxSupplyData) {
-      setMaxSupply(maxSupplyData.toNumber());
+      setMaxSupply((maxSupplyData as any).toNumber());
     }
   }, [maxSupplyData]);
 
