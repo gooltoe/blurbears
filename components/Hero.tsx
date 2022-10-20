@@ -116,7 +116,7 @@ function Hero({}: Props) {
                 onClick={() => {
                   mint?.();
                 }}
-                className="rounded-xl bg-white px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
+                className="rounded-xl px-10 py-4 font-bold text-xl my-4 shadow-xl uppercase text-[#0a0504] bg-[#ff5600]"
                 disabled={isMintLoading}
                 data-mint-loading={isMintLoading}
                 data-mint-started={isMintStarted}
