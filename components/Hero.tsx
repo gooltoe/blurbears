@@ -127,7 +127,9 @@ function Hero({}: Props) {
               </a>
             </div>
           </div>
+          <p className="text-4xl font-bold py-6 text-[#ff5600]">SOLD OUT</p>
 
+          {/* 
           {isConnected ? (
             <div>
               <p className="text-xl font-bold pb-2 text-[#ff5600]">
@@ -197,7 +199,7 @@ function Hero({}: Props) {
             //   </button>
             // </div>
             ""
-          )}
+          )} */}
 
           {/* <ConnectButton /> */}
           <CustomButton />
