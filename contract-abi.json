@@ -208,7 +208,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "tokenId",
+        "name": "id",
         "type": "uint256"
       }
     ],
@@ -250,13 +250,32 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "cost",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_marketplace",
+        "type": "address[]"
+      }
+    ],
+    "name": "blacklistMarketplaces",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "blacklistedMarketplaces",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bool",
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -307,6 +326,19 @@
   },
   {
     "inputs": [],
+    "name": "maxPerTx",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "maxPerWallet",
     "outputs": [
       {
@@ -335,7 +367,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "amt",
+        "name": "_amount",
         "type": "uint256"
       }
     ],
@@ -346,51 +378,15 @@
   },
   {
     "inputs": [],
-    "name": "mintEnabled",
+    "name": "mintPrice",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "uint256",
         "name": "",
-        "type": "bool"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amt",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32[]",
-        "name": "proof",
-        "type": "bytes32[]"
-      }
-    ],
-    "name": "mint_proof",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amt",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "proof",
-        "type": "bytes32"
-      }
-    ],
-    "name": "mint_proof_byte",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -516,6 +512,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "saleActive",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -537,7 +546,7 @@
     "inputs": [
       {
         "internalType": "string",
-        "name": "baseURI_",
+        "name": "_baseURI",
         "type": "string"
       }
     ],
@@ -550,11 +559,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_newCost",
+        "name": "_amount",
         "type": "uint256"
       }
     ],
-    "name": "setCost",
+    "name": "setMaxPerTx",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -563,18 +572,24 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "maxPerWallet_",
+        "name": "_newSupply",
         "type": "uint256"
       }
     ],
-    "name": "setMaxPerWallet",
+    "name": "setMaxSupply",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "setSaleState",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMintPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -609,6 +624,13 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "toggleSale",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -675,6 +697,13 @@
       }
     ],
     "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
