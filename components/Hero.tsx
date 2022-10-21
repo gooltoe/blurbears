@@ -16,64 +16,64 @@ type Props = {};
 const contract = "0x3c319ba34c2602a3107bc6c8f0c123ccc9cd40ed";
 
 function Hero({}: Props) {
-  const [count, setCount] = useState(1);
-  const [totalMinted, setTotalMinted] = useState(0);
-  const [live, setSaleLive] = useState(false);
+  // const [count, setCount] = useState(1);
+  // const [totalMinted, setTotalMinted] = useState(0);
+  // const [live, setSaleLive] = useState(false);
 
-  const { isConnected, address } = useAccount();
+  // const { isConnected, address } = useAccount();
 
-  let { config }: any = usePrepareContractWrite({
-    address: contract,
-    args: [count],
-    abi: contractInterface,
-    functionName: "mint",
-    overrides: {
-      from: address,
-      value: ethers.utils.parseEther((0.0069 * count).toString()),
-    },
-  });
+  // let { config }: any = usePrepareContractWrite({
+  //   address: contract,
+  //   args: [count],
+  //   abi: contractInterface,
+  //   functionName: "mint",
+  //   overrides: {
+  //     from: address,
+  //     value: ethers.utils.parseEther((0.0069 * count).toString()),
+  //   },
+  // });
 
-  const {
-    data: mintData,
-    write: mint,
-    isLoading: isMintLoading,
-    isSuccess: isMintStarted,
-  } = useContractWrite(config);
+  // const {
+  //   data: mintData,
+  //   write: mint,
+  //   isLoading: isMintLoading,
+  //   isSuccess: isMintStarted,
+  // } = useContractWrite(config);
 
-  const { isSuccess: txSuccess } = useWaitForTransaction({
-    hash: mintData?.hash,
-  });
+  // const { isSuccess: txSuccess } = useWaitForTransaction({
+  //   hash: mintData?.hash,
+  // });
 
-  const { data: totalSupplyData } = useContractRead({
-    address: contract,
-    abi: contractInterface,
-    functionName: "totalSupply",
-    watch: true,
-  });
+  // const { data: totalSupplyData } = useContractRead({
+  //   address: contract,
+  //   abi: contractInterface,
+  //   functionName: "totalSupply",
+  //   watch: true,
+  // });
 
-  const { data: saleActive } = useContractRead({
-    address: contract,
-    abi: contractInterface,
-    functionName: "saleActive",
-    watch: true,
-  });
+  // const { data: saleActive } = useContractRead({
+  //   address: contract,
+  //   abi: contractInterface,
+  //   functionName: "saleActive",
+  //   watch: true,
+  // });
 
-  const isMinted = txSuccess;
+  // const isMinted = txSuccess;
 
-  useEffect(() => {
-    if (totalSupplyData) {
-      setTotalMinted((totalSupplyData as any).toNumber());
-      if ((totalSupplyData as any).toNumber() >= 3333) {
-        setSaleLive(false);
-      }
-    }
-  }, [totalSupplyData]);
+  // useEffect(() => {
+  //   if (totalSupplyData) {
+  //     setTotalMinted((totalSupplyData as any).toNumber());
+  //     if ((totalSupplyData as any).toNumber() >= 3333) {
+  //       setSaleLive(false);
+  //     }
+  //   }
+  // }, [totalSupplyData]);
 
-  useEffect(() => {
-    if (saleActive) {
-      setSaleLive(saleActive as any);
-    }
-  }, [saleActive]);
+  // useEffect(() => {
+  //   if (saleActive) {
+  //     setSaleLive(saleActive as any);
+  //   }
+  // }, [saleActive]);
 
   return (
     <div className=" bg-[#0a0504] flex flex-col px-[10vw] py-[10vh]">
@@ -202,12 +202,12 @@ function Hero({}: Props) {
           )} */}
 
           {/* <ConnectButton /> */}
-          <CustomButton />
-          {isMinted && (
+          {/* <CustomButton /> */}
+          {/* {isMinted && (
             <div className="text-lg font-semibold py-6 text-[#ff5600]">
               Transaction successful! Thanks for minting a BlurBear! {isMinted}
             </div>
-          )}
+          )} */}
         </div>
         <div className="rounded-xl shadow-xl border-2 border-[#ff5600] p-6 basis-2/5">
           <img src="/blurtest.gif" alt="" className="rounded-xl shadow-xl" />
